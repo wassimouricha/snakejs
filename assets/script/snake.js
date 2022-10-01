@@ -86,12 +86,16 @@ function update() {
         // condition du game over
         if(snakeX < 0 || snakeX > columns *  blockSize - 1 || snakeY < 0 || snakeY > rows * blockSize - 1){
             gameOver = true;
-            alert("Game over , vous avez perdu en sortant du canvas ,veuillez réactualiser la page pour rejouer ");
+            alert("Game over , vous avez perdu en sortant du canvas ,veuillez cliquer sur ok pour rejouer ");
+            // pour recharger la page
+            window.location.reload();
         }
         for (let i = 0 ; i < snakeBody.length; i++) {
             if(snakeX == snakeBody[i][0] && snakeY == snakeBody[i][1]) {
                 gameOver = true;
-                alert("Game over , vous avez perdu en vous mordant la queue , veuillez réactualiser la page pour rejouer ")
+                alert("Game over , vous avez perdu en vous mordant la queue , veuillez cliquer sur ok pour rejouer ");
+                // pour recharger la page
+                window.location.reload();
             }
         }
 }
